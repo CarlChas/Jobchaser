@@ -1,0 +1,38 @@
+.searchBar {
+  border: solid;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0px 5px 5px -2px;
+}
+
+.jobListing {
+  display: flex;
+  border: solid;
+  border-radius: 15px;
+  margin-top: 5rem;
+  padding: 2rem;
+}
+
+.myTags {
+  border: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  margin-left: 5rem;
+  min-width: 5rem;
+  max-height: 1rem;
+  padding: 0.7rem;
+  /* padding: 10px; */
+  text-align: center;
+}
+
+#jobLogo {
+  margin-right: 1rem;
+}
+
+.myFavorite {
+  flex: 1;
+}
+
+/* .jobSection {
+  justify-content: ;
+} */
