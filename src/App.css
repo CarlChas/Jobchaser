@@ -5,6 +5,11 @@
   box-shadow: 0px 5px 5px -2px;
 }
 
+.searchBar * {
+  border: solid;
+  border-radius: 10px;
+}
+
 .jobListing {
   display: flex;
   border: solid;

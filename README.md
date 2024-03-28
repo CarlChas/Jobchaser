@@ -30,3 +30,13 @@ En hook som tillåtter en att synkronisera en component med ett externt system.
 •	Vad är syftet kring den s.k dependency-arrayen i useEffect?
 För att kolla om innehållet inom arrayen i fråga har förändrats mellan olika renderingar.
 
+------------------------------------------------------------------------------
+
+Veckans uppgift 
+Fortsätta med Trello (eller liknande) för egen projektplanering
+Fortsätta skissa wireframe/prototyp i Figma eller liknande
+Implementera  navigering / routing  med React Router 6
+Hantera formulär med validering med React Hook Form
+Göra ett global state för om användaren är inloggad eller inte med useContext
+Styling av nya komponenter med  Tailwind CSS
+Frivilligt:  Funktionalitet för dark- och light-mode med hjälp av Tailwind och useContext
