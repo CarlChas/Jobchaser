@@ -1,7 +1,7 @@
 import './App.css'
 import React from 'react'
 
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, Outlet, Link } from 'react-router-dom'
 import Dashboard from './components/Dashboard.jsx'
 import SignInPage from './components/SignInPage.jsx'
 import SignUpPage from './components/SignUpPage.jsx'
@@ -19,9 +19,15 @@ function App() {
     <BrowserRouter>
       <header>
         <nav>
-          <li>Sign In</li>
-          <li>Sign Up</li>
+          <ul>
+            <li>
+              <Link to='/signin'>Sign In</Link>
+            </li>
+            <li>
+              <Link to='/signup'>Sign Up</Link>
+            </li>
           <button>Sign Out</button>
+          </ul>
         </nav>
       </header>
       <Routes>
