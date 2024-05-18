@@ -5,6 +5,7 @@ function SignInPage() {
         <div>
             <h1>Sign In</h1>
             <SignInForm />
+            <Link to='/'>Home</Link>
         </div>
     )
 }

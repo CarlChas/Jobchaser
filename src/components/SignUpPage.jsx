@@ -5,6 +5,7 @@ function SignUpPage() {
         <div>
             <h1>Sign Up</h1>
             <SignUpForm />
+            <Link to='/'>Home</Link>
         </div>
     )
 }
