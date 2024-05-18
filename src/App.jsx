@@ -26,7 +26,10 @@ function App() {
             <li>
               <Link to='/signup'>Sign Up</Link>
             </li>
-          <button>Sign Out</button>
+            <li>
+              <Link to='/'>Home</Link>
+            </li>
+            {/* <button>Sign Out</button> */}
           </ul>
         </nav>
       </header>
