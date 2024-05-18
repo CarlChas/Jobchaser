@@ -7,7 +7,7 @@ function SignInForm() {
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm();
+    } = useForm()
 
     const formSubmit = (data) => {
 
@@ -59,4 +59,4 @@ function SignInForm() {
     );
 }
 
-export default SignInForm;
+export default SignInForm

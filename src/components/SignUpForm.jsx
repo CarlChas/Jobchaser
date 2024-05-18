@@ -8,14 +8,19 @@ function SignUpForm() {
         handleSubmit,
         watch,
         formState: { errors }
-    } = useForm();
+    } = useForm()
 
 
-    const formSubmit = (data) => {
-        console.log("Form Submitted: ", data);
-
-
-    };
+    const formSubmit = async (data) => {
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password)
+            console.log("User signed in: ", userCredential.user)
+            // Handle successful sign-in (e.g., redirect, display message, etc.)
+        } catch (error) {
+            console.error("Error signing in: ", error)
+            // Handle sign-in error (e.g., display error message to user)
+        }
+    }
 
     return (
         <form onSubmit={handleSubmit(formSubmit)}>
@@ -74,4 +79,4 @@ function SignUpForm() {
     );
 }
 
-export default SignUpForm;
+export default SignUpForm
