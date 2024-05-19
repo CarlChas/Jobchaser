@@ -9,7 +9,7 @@ const Dashboard = () => {
     const handleLogOut = () => {
         logOut()
         navigate("/signin")
-    };
+    }
 
     return (
         <div>

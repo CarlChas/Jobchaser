@@ -6,10 +6,13 @@ import { signInWithEmailAndPassword } from "firebase/auth"
 import { useAuth } from "../AuthContext"
 
 function SignInForm() {
-    const { register, handleSubmit, formState: { errors } } = useForm()
+    const { setCurrentUser } = useAuth()
+    const { register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm()
     const navigate = useNavigate()
     const [signInError, setSignInError] = useState(null)
-    const { setCurrentUser } = useAuth()
 
     const formSubmit = async (data) => {
         try {

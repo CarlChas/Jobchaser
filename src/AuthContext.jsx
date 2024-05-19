@@ -13,10 +13,12 @@ export const AuthProvider = ({ children }) => {
         const setAuthPersistence = async () => {
             try {
                 await setPersistence(MyAuth, browserLocalPersistence)
+                console.log("Persistence = local")
                 const unSub = onAuthStateChanged(MyAuth, (user) => {
+                    console.log("Auth state changed, user:", user)
                     setCurrentUser(user)
                 })
-                return () => unSub()
+                return unSub
             } catch (error) {
                 console.error("Error setting persistence:", error)
             }
@@ -32,7 +34,6 @@ export const AuthProvider = ({ children }) => {
     const myVal = {
         currentUser,
         logOut,
-        setCurrentUser,
     }
 
     return <AuthContext.Provider value={myVal}>{children}</AuthContext.Provider>
