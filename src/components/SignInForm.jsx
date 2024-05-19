@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
-import { MyAuth } from "./Firebase"
+import { MyAuth } from "./components/Firebase"
 import { signInWithEmailAndPassword } from "firebase/auth"
 
 function SignInForm() {
