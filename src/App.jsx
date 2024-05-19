@@ -1,6 +1,5 @@
 import './App.css'
 import React from 'react'
-
 import { BrowserRouter, Routes, Route, Navigate, Outlet, Link } from 'react-router-dom'
 import Dashboard from './components/Dashboard.jsx'
 import SignInPage from './components/SignInPage.jsx'
@@ -16,7 +15,6 @@ function ProtectedRoute() {
 }
 
 function App() {
-
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -27,7 +25,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/signin' element={<SignInPage />} />
           <Route path='/signup' element={<SignUpPage />} />
-          <Route path='/dashboard' element={<ProtectedRoute />}>
+          <Route element={<ProtectedRoute />}>
             <Route path='/dashboard' element={<Dashboard />} />
           </Route>
         </Routes>
