@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
 import { MyAuth } from "./components/Firebase"
 import { onAuthStateChanged, signOut, setPersistence, browserLocalPersistence } from "firebase/auth"
-import { set } from "firebase/database"
+import { setPersistence } from "firebase/database"
 
 const AuthContext = createContext()
 
