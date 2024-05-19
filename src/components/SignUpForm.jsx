@@ -44,6 +44,22 @@ function SignUpForm() {
             </div>
 
             <div>
+                <label htmlFor="password">Password:</label>
+                <input
+                    id="password"
+                    type="password"
+                    {...register("password", {
+                        required: "Password is required",
+                        minLength: {
+                            value: 8,
+                            message: "Password must be at least 8 characters"
+                        }
+                    })}
+                />
+                {errors.password && <span>{errors.password.message}</span>}
+            </div>
+
+            <div>
                 <label htmlFor="confirmPassword">Confirm Password:</label>
                 <input
                     id="confirmPassword"
