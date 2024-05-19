@@ -11,6 +11,7 @@ function SignInForm() {
         formState: { errors }
     } = useForm()
     const navigate = useNavigate()
+    const [signInError, setSignInError] = useState(null)
 
     const formSubmit = async (data) => {
         try {
@@ -19,6 +20,7 @@ function SignInForm() {
             navigate('/dashboard')
         } catch (error) {
             console.error("Error signing in:", error)
+            setSignInError(error.message)
         }
     }
 
@@ -56,6 +58,8 @@ function SignInForm() {
                     />
                     {errors.password && <span>{errors.password.message}</span>}
                 </div>
+
+                {signInError && <div style={{color: 'red'}}>{signInError}</div>}
 
                 <button type="submit">Log in</button>
             </form>
