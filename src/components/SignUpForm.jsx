@@ -1,6 +1,6 @@
 import React from "react"
 import { useForm } from "react-hook-form"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { MyAuth } from "./Firebase"
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 
@@ -11,11 +11,13 @@ function SignUpForm() {
         watch,
         formState: { errors }
     } = useForm()
+    const navigate = useNavigate()
 
     const formSubmit = async (data) => {
         try {
             const userCredential = await createUserWithEmailAndPassword(MyAuth, data.email, data.password)
             console.log("User registered: ", userCredential.user)
+            navigate('/dashboard')
             // Handle successful sign-in (e.g., redirect, display message, etc.)
         } catch (error) {
             console.error("Error registering: ", error)
@@ -77,7 +79,7 @@ function SignUpForm() {
             <Link to="/signin">Already have an account? Sign In</Link>
 
         </form>
-    );
+    )
 }
 
 export default SignUpForm
