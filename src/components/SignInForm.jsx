@@ -15,7 +15,7 @@ function SignInForm() {
         try {
             const userCredential = await signInWithEmailAndPassword(MyAuth, data.email, data.password)
             console.log("User signed in:", userCredential)
-            Navigate("/dashboard")
+            navigate("/dashboard")
         } catch (error) {
             console.error("Error signing in:", error)
         }
