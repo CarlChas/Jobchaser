@@ -7,7 +7,7 @@ import SignInPage from './components/SignInPage.jsx'
 import SignUpPage from './components/SignUpPage.jsx'
 import HomePage from './components/HomePage.jsx'
 import { AuthProvider, useAuth } from './AuthContext'
-import Navigation from './Navigation'
+import Navigation from './components/Navigation.jsx'
 
 function ProtectedRoute() {
   const { currentUser } = useAuth();
@@ -22,20 +22,6 @@ function App() {
       <BrowserRouter>
         <header>
           <Navigation />
-          <nav>
-            <ul>
-              <li>
-                <Link to='/signin'>Sign In</Link>
-              </li>
-              <li>
-                <Link to='/signup'>Sign Up</Link>
-              </li>
-              <li>
-                <Link to='/'>Home</Link>
-              </li>
-              {/* <button>Sign Out</button> */}
-            </ul>
-          </nav>
         </header>
         <Routes>
           <Route path='/' element={<HomePage />} />
