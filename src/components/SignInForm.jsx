@@ -3,20 +3,19 @@ import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { MyAuth } from "./Firebase"
 import { signInWithEmailAndPassword } from "firebase/auth"
+import { useAuth } from "../AuthContext"
 
 function SignInForm() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors }
-    } = useForm()
+    const { register, handleSubmit, formState: { errors } } = useForm()
     const navigate = useNavigate()
     const [signInError, setSignInError] = useState(null)
+    const { setCurrentUser } = useAuth()
 
     const formSubmit = async (data) => {
         try {
             const userCredential = await signInWithEmailAndPassword(MyAuth, data.email, data.password)
             console.log("User signed in:", userCredential.user)
+            setCurrentUser(userCredential.user)
             navigate('/dashboard')
         } catch (error) {
             console.error("Error signing in:", error)

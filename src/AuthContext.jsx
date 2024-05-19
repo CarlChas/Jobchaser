@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
 import { MyAuth } from "./components/Firebase"
 import { onAuthStateChanged, signOut, setPersistence, browserLocalPersistence } from "firebase/auth"
-// import { set } from "firebase/database"
 
 const AuthContext = createContext()
 
@@ -30,6 +29,7 @@ export const AuthProvider = ({ children }) => {
     const myVal = {
         currentUser,
         logOut,
+        setCurrentUser,
     }
 
     return <AuthContext.Provider value={myVal}>{children}</AuthContext.Provider>
