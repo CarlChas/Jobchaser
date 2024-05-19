@@ -7,12 +7,7 @@ import SignUpPage from './components/SignUpPage.jsx'
 import HomePage from './components/HomePage.jsx'
 import { AuthProvider, useAuth } from './AuthContext'
 import Navigation from './components/Navigation.jsx'
-
-function ProtectedRoute() {
-  const { currentUser } = useAuth();
-
-  return currentUser ? <Outlet /> : <Navigate to="/signin" replace />
-}
+import ProtectedRoute from './components/ProtectedRoute'
 
 function App() {
   return (
@@ -25,7 +20,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/signin' element={<SignInPage />} />
           <Route path='/signup' element={<SignUpPage />} />
-          <Route element={<ProtectedRoute />}>
+          <Route path='/dashboard' element={<ProtectedRoute />}>
             <Route path='/dashboard' element={<Dashboard />} />
           </Route>
         </Routes>
