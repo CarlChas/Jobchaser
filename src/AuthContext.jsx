@@ -10,16 +10,19 @@ export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null)
 
     useEffect(() => {
-        setPersistence(MyAuth, browserLocalPersistence)
-            .then(() => {
+        const setAuthPersistence = async () => {
+            try {
+                await setPersistence(MyAuth, browserLocalPersistence)
                 const unSub = onAuthStateChanged(MyAuth, (user) => {
                     setCurrentUser(user)
                 })
-                return unSub
-            })
-            .catch((error) => {
+                return () => unSub()
+            } catch (error) {
                 console.error("Error setting persistence:", error)
-            })
+            }
+        }
+
+        setAuthPersistence()
     }, [])
 
     const logOut = () => {
