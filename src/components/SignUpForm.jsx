@@ -1,6 +1,8 @@
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import MyAuth from "./Firebase";
+import React from "react"
+import { useForm } from "react-hook-form"
+import { Link } from "react-router-dom"
+import MyAuth from "./Firebase"
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 
 function SignUpForm() {
 
@@ -14,11 +16,11 @@ function SignUpForm() {
 
     const formSubmit = async (data) => {
         try {
-            const userCredential = await signInWithEmailAndPassword(auth, data.email, data.password)
-            console.log("User signed in: ", userCredential.user)
+            const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password)
+            console.log("User registered: ", userCredential.user)
             // Handle successful sign-in (e.g., redirect, display message, etc.)
         } catch (error) {
-            console.error("Error signing in: ", error)
+            console.error("Error registering: ", error)
             // Handle sign-in error (e.g., display error message to user)
         }
     }
@@ -39,22 +41,6 @@ function SignUpForm() {
                     })}
                 />
                 {errors.email && <span>{errors.email.message}</span>}
-            </div>
-
-            <div>
-                <label htmlFor="password">Password:</label>
-                <input
-                    id="password"
-                    type="password"
-                    {...register("password", {
-                        required: "Password is required",
-                        minLength: {
-                            value: 8,
-                            message: "Password must be at least 8 characters"
-                        }
-                    })}
-                />
-                {errors.password && <span>{errors.password.message}</span>}
             </div>
 
             <div>
