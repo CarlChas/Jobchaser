@@ -1,6 +1,8 @@
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-
+import React from "react";
+import { useForm } from "react-hook-form"
+import { Link, useNavigate } from "react-router-dom"
+import { MyAuth } from "./Firebase"
+import { signInWithEmailAndPassword } from "firebase/auth"
 
 function SignInForm() {
     const {
@@ -9,11 +11,15 @@ function SignInForm() {
         formState: { errors }
     } = useForm()
 
-    const formSubmit = (data) => {
-
-        console.log("Form Submitted: ", data);
-
-    };
+    const formSubmit = async (data) => {
+        try {
+            const userCredential = await signInWithEmailAndPassword(MyAuth, data.email, data.password)
+            console.log("User signed in:", userCredential)
+            Navigate("/dashboard")
+        } catch (error) {
+            console.error("Error signing in:", error)
+        }
+    }
 
     return (
         <>
