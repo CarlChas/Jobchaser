@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
 import { MyAuth } from "./components/Firebase"
-import { onAuthStateChanged, signOut } from "firebase/auth"
+import { onAuthStateChanged, signOut, setPersistence, browserLocalPersistence } from "firebase/auth"
+import { set } from "firebase/database"
 
 const AuthContext = createContext()
 
@@ -10,10 +11,16 @@ export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null)
 
     useEffect(() => {
-        const unSub = onAuthStateChanged(MyAuth, (user) => {
-            setCurrentUser(user)
-        })
-        return unSub
+        setPersistence(MyAuth, browserLocalPersistence)
+            .then(() => {
+                const unSub = onAuthStateChanged(MyAuth, (user) => {
+                    setCurrentUser(user)
+                })
+                return unSub
+            })
+            .catch((error) => {
+                console.error("Error setting persistence:", error)
+            })
     }, [])
 
     const logOut = () => {
