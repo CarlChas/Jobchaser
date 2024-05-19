@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { MyAuth } from "./Firebase"
@@ -59,7 +59,7 @@ function SignInForm() {
                     {errors.password && <span>{errors.password.message}</span>}
                 </div>
 
-                {signInError && <div style={{color: 'red'}}>{signInError}</div>}
+                {signInError && <div style={{ color: 'red' }}>{signInError}</div>}
 
                 <button type="submit">Log in</button>
             </form>
