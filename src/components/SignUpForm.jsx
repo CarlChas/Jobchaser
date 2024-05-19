@@ -1,11 +1,10 @@
 import React from "react"
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"
-import MyAuth from "./Firebase"
+import { MyAuth } from "../Firebase"
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 
 function SignUpForm() {
-
     const {
         register,
         handleSubmit,
@@ -13,10 +12,9 @@ function SignUpForm() {
         formState: { errors }
     } = useForm()
 
-
     const formSubmit = async (data) => {
         try {
-            const userCredential = await createUserWithEmailAndPassword(auth, data.email, data.password)
+            const userCredential = await createUserWithEmailAndPassword(MyAuth, data.email, data.password)
             console.log("User registered: ", userCredential.user)
             // Handle successful sign-in (e.g., redirect, display message, etc.)
         } catch (error) {

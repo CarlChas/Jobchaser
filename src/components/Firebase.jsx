@@ -18,4 +18,4 @@ const firebaseConfig = {
 const MyFirebase = initializeApp(firebaseConfig)
 
 const MyAuth = getAuth(MyFirebase)
-export default MyAuth
+export { MyAuth }
