@@ -20,7 +20,7 @@ function SignInForm() {
             navigate('/dashboard')
         } catch (error) {
             console.error("Error signing in:", error)
-            setSignInError(error.message)
+            setSignInError(error.message || "Unknown error.")
         }
     }
 
