@@ -33,6 +33,7 @@ export const AuthProvider = ({ children }) => {
 
     const myVal = {
         currentUser,
+        setCurrentUser,
         logOut,
     }
 
