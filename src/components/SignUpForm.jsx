@@ -1,7 +1,7 @@
 import React from "react"
 import { useForm } from "react-hook-form"
 import { Link } from "react-router-dom"
-import { MyAuth } from "../Firebase"
+import { MyAuth } from "./Firebase"
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 
 function SignUpForm() {
