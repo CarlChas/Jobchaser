@@ -21,7 +21,7 @@ import React from 'react';
 function JobListing({ job }) {
   return (
     <article className='jobListing'>
-      <img id='jobLogo' src={job.logo} alt={`${job.company} logo`} />
+      <img id='jobLogo' src={`${job.logo}`} alt={job.company} />
       <div className='jobDetails'>
         <h2 className='jobPosition'>{job.position}</h2>
         <p className='jobLevel'>{job.level}</p>
