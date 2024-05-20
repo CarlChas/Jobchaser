@@ -5,11 +5,11 @@ import Dashboard from './components/Dashboard.jsx'
 import SignInPage from './components/SignInPage.jsx'
 import SignUpPage from './components/SignUpPage.jsx'
 import HomePage from './components/HomePage.jsx'
-import { AuthProvider } from './AuthContext'
+import { AuthProvider } from './AuthContext.jsx'
 import Navigation from './components/Navigation.jsx'
-import ProtectedRoute from './components/ProtectedRoute'
+import ProtectedRoute from './components/ProtectedRoute.jsx'
 
-function App() {
+const App: React.FC = () => {
   return (
     <AuthProvider>
       <BrowserRouter>
