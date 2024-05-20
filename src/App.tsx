@@ -1,13 +1,13 @@
 import './App.css'
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate, Outlet, Link } from 'react-router-dom'
-import Dashboard from './components/Dashboard.jsx'
-import SignInPage from './components/SignInPage.jsx'
-import SignUpPage from './components/SignUpPage.jsx'
-import HomePage from './components/HomePage.jsx'
-import { AuthProvider } from './AuthContext.jsx'
-import Navigation from './components/Navigation.jsx'
-import ProtectedRoute from './components/ProtectedRoute.jsx'
+import Dashboard from './components/Dashboard'
+import SignInPage from './components/SignInPage'
+import SignUpPage from './components/SignUpPage'
+import HomePage from './components/HomePage'
+import { AuthProvider } from './AuthContext'
+import Navigation from './components/Navigation'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const App: React.FC = () => {
   return (
