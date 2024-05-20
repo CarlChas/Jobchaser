@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import JobListing from './JobListing.jsx'
+import JobListing from './JobListing'
+import { Job } from '../types'
 
-function HomePage() {
-    const [jobs, setJobs] = useState([])
-    const [searchJob, setSearchJob] = useState('')
-    const [filter, setFilter] = useState([])
+const HomePage: React.FC = () => {
+    const [jobs, setJobs] = useState<Job[]>([])
+    const [searchJob, setSearchJob] = useState<string>('')
+    const [filter, setFilter] = useState<string[]>([])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -14,7 +15,7 @@ function HomePage() {
                 if (!myResponse.ok) {
                     throw new Error(`HTTP error! Status: ${myResponse.status}`)
                 }
-                const myData = await myResponse.json()
+                const myData: Job[] = await myResponse.json()
                 setJobs(myData)
             } catch (error) {
                 console.log(error)
@@ -24,10 +25,10 @@ function HomePage() {
         fetchData()
     }, [])
 
-    const handleFilter = (category) => {
-        setFilter((prevFilter) => (
+    const handleFilter = (category: string) => {
+        setFilter((prevFilter) =>
             prevFilter.includes(category) ? prevFilter : [...prevFilter, category]
-        ))
+        )
     }
 
     const filterJobs = jobs.filter((job) => {

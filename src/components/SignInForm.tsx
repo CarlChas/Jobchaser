@@ -1,21 +1,26 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form"
+import { useForm, SubmitHandler } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { MyAuth } from "./Firebase"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { useAuth } from "../AuthContext"
 
-function SignInForm() {
+interface FormData {
+    email: string
+    password: string
+}
+
+const SignInForm: React.FC = () => {
     const { setCurrentUser } = useAuth()
     const {
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm()
+    } = useForm<FormData>()
     const navigate = useNavigate()
-    const [signInError, setSignInError] = useState(null)
+    const [signInError, setSignInError] = useState<string | null>(null)
 
-    const formSubmit = async (data) => {
+    const formSubmit: SubmitHandler<FormData> = async (data) => {
         try {
             const userCredential = await signInWithEmailAndPassword(MyAuth, data.email, data.password)
             console.log("User signed in:", userCredential.user)

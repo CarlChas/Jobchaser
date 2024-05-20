@@ -1,19 +1,25 @@
 import React from "react"
-import { useForm } from "react-hook-form"
+import { useForm, SubmitHandler } from "react-hook-form"
 import { Link, useNavigate } from "react-router-dom"
 import { MyAuth } from "./Firebase"
 import { createUserWithEmailAndPassword } from 'firebase/auth'
 
-function SignUpForm() {
+interface FormData {
+    email: string
+    password: string
+    confirmPassword: string
+}
+
+const SignUpForm: React.FC = () => {
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors }
-    } = useForm()
+    } = useForm<FormData>()
     const navigate = useNavigate()
 
-    const formSubmit = async (data) => {
+    const formSubmit: SubmitHandler<FormData> = async (data) => {
         try {
             const userCredential = await createUserWithEmailAndPassword(MyAuth, data.email, data.password)
             console.log("User registered: ", userCredential.user)

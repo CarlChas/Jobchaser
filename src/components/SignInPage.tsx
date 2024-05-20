@@ -1,6 +1,7 @@
+import React from 'react'
 import SignInForm from "./SignInForm"
 
-function SignInPage() {
+const SignInPage: React.FC = () => {
     return (
         <div>
             <h1>Sign In</h1>
