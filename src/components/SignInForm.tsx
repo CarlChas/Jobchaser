@@ -27,8 +27,11 @@ const SignInForm: React.FC = () => {
             setCurrentUser(userCredential.user)
             navigate('/dashboard')
         } catch (error) {
-            console.error("Error signing in:", error)
-            setSignInError(error.message || "Unknown error.")
+            if (error instanceof Error) {
+                setSignInError(error.message || "Unknown error.")
+            } else {
+                setSignInError("Unknown error.")
+            }
         }
     }
 
