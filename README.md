@@ -45,6 +45,20 @@ Med useContext tillåter man delning av states och värden mellan komponenter ut
 Fördelar: Responsiv, ej behöva skriva anpassad CSS, fördefinierade klasser, konfigurbar.
 Nackdelar: Info-overload för nybörjare, blandning av styles och innehåll vilket kan leda till svårläshet, många utility-klasser kan leda till svårheter gällande läsning av kod samt dess underhåll.
 
+-------
+
+Veckans teoretiska frågor – Jobchaser del 4
+
+•	Vad är Redux Toolkit?
+Redux toolkit är ett verktygssätt för att effektivisera arbetet med biblioteket Redux. 
+•	När, i vilka situationer vill man använda Redux Toolkit?
+När man vill reducera mängden boilerplate-kod som är vanligt med Redux.
+Eller när globala tillstånd är komplexa i React. 
+•	Beskriv typiska områden hur man använder Typescript i React? (ex props, event, useReducer, etc)
+Props: För att definiera typerna på props som komponenter tar emot, vilket förbättrar kodens läsbarhet och minskar risken för buggar.
+Event: För att typa olika händelser som exempelvis onClick, onChange, etc., vilket säkerställer korrekt hantering av event-objekt.
+useReducer: För att typa state och actions i en reducer, vilket ger starkare typkontroll och säkerhet.
+
 ------------------------------------------------------------------------------
 
 Veckans uppgift 
