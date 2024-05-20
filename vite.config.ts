@@ -7,7 +7,7 @@ export default defineConfig({
   build: {
     sourcemap: true,
     rollupOptions: {
-      input: 'index.html',
+      input: 'main.tsx',
     }
   },
 })
