@@ -3,7 +3,7 @@ import { Navigate, Outlet } from 'react-router-dom'
 import { useAuth } from '../AuthContext'
 
 const ProtectedRoute = () => {
-    const { currentUser } = useAuth()
+    const { currentUser, loading } = useAuth()
     console.log("Current User in ProtectedRoute:", currentUser)
 
     if (loading) {
