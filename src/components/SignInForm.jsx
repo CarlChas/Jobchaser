@@ -7,7 +7,8 @@ import { useAuth } from "../AuthContext"
 
 function SignInForm() {
     const { setCurrentUser } = useAuth()
-    const { register,
+    const {
+        register,
         handleSubmit,
         formState: { errors }
     } = useForm()

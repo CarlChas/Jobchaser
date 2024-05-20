@@ -5,7 +5,7 @@ import Dashboard from './components/Dashboard.jsx'
 import SignInPage from './components/SignInPage.jsx'
 import SignUpPage from './components/SignUpPage.jsx'
 import HomePage from './components/HomePage.jsx'
-import { AuthProvider, useAuth } from './AuthContext'
+import { AuthProvider } from './AuthContext'
 import Navigation from './components/Navigation.jsx'
 import ProtectedRoute from './components/ProtectedRoute'
 
