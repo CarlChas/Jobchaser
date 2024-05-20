@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 /* function JobListing({ job }) {
   return (
@@ -21,12 +21,10 @@ import React from 'react';
 function JobListing({ job }) {
   return (
     <article className='jobListing'>
-      <img id='jobLogo' src={`${job.logo}`} alt={job.company} />
-      <div className='jobDetails'>
-        <h2 className='jobPosition'>{job.position}</h2>
-        <p className='jobLevel'>{job.level}</p>
-      </div>
+      <img id='jobLogo' src={job.logo} alt={`${job.company} logo`} />
       <div className='jobTags'>
+        <span className='myTags'>{job.position}</span>
+        <span className='myTags'>{job.level}</span>
         {job.languages.length > 0 && job.languages.map((language, index) => (
           <span key={index} className='myTags'>{language}</span>
         ))}
@@ -34,7 +32,7 @@ function JobListing({ job }) {
           <span key={index} className='myTags'>{tool}</span>
         ))}
       </div>
-      <button className='myFavorite'>Star</button>
+      <article className='myFavorite'>Star</article>
     </article>
   )
 }
