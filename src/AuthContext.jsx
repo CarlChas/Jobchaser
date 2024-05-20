@@ -39,6 +39,7 @@ export const AuthProvider = ({ children }) => {
         currentUser,
         setCurrentUser,
         logOut,
+        loading
     }
 
     if (loading) {
