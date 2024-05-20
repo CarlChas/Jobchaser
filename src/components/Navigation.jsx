@@ -8,23 +8,33 @@ function Navigation() {
     return (
         <nav>
             <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
                 {currentUser ? (
-                    <li>
-                        <Link to="/dashboard">Dashboard</Link>
-                    </li>
+                    <>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/dashboard">Dashboard</Link>
+                        </li>
+                        <li>
+                            <button onClick={logOut}>Sign Out</button>
+                        </li>
+                    </>
                 ) : (
-                    <li>
-                        < Link to="/signin">Sign In</Link>
-                    </li>
+                    <>
+                        <li>
+                            <Link to="/signin">Sign In</Link>
+                        </li>
+                        <li>
+                            <Link to="/signup">Sign Up</Link>
+                        </li>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                    </>
                 )}
-                <li>
-                    <button onClick={logOut}>Sign Out</button>
-                </li>
             </ul>
-        </nav >
+        </nav>
     )
 }
 
