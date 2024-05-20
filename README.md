@@ -30,6 +30,21 @@ En hook som tillåtter en att synkronisera en component med ett externt system.
 •	Vad är syftet kring den s.k dependency-arrayen i useEffect?
 För att kolla om innehållet inom arrayen i fråga har förändrats mellan olika renderingar.
 
+--------
+Veckans teoretiska frågor – Jobchaser del 3
+
+•	Vad menas med Reacts ekosystem? 
+En samling av olika verktyg, bibliotek och dylikt som ägnas specifikt om biblioteket React.
+•	Nämn några andra viktiga bibliotek i Reacts ekosystem förutom React Router och React Hook Form
+Redux och Axios
+•	Vad är fördelen med att använda React Hook Form?
+React Hook Form lägger fokus på minimal omrendering vilket leder till en förbättring av prestanda speciellt eftersom det är byggt för att vara lättviktig. Den integrerar lätt tillsammans med andra bibliotek och komponenter tack vare Reacts ekosystem som den är en del av. En till fördel, kortare/mindre kodkrav gällande formulär.
+•	Vad är syftet med useContext? Vilket problem med props löser den?
+Med useContext tillåter man delning av states och värden mellan komponenter utan att behöva följa den specifika komponenthierarkin via props ("prop drilling").
+•	Vilka fördelar finns det att använda Tailwind / nackdelar? 
+Fördelar: Responsiv, ej behöva skriva anpassad CSS, fördefinierade klasser, konfigurbar.
+Nackdelar: Info-overload för nybörjare, blandning av styles och innehåll vilket kan leda till svårläshet, många utility-klasser kan leda till svårheter gällande läsning av kod samt dess underhåll.
+
 ------------------------------------------------------------------------------
 
 Veckans uppgift 
