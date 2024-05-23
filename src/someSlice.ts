@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 interface SomeState {
   value: number
@@ -6,7 +6,7 @@ interface SomeState {
 
 const initialState: SomeState = {
   value: 0,
-};
+}
 
 const someSlice = createSlice({
   name: 'some',
@@ -19,7 +19,7 @@ const someSlice = createSlice({
       state.value -= 1
     },
   },
-});
+})
 
 export const { increment, decrement } = someSlice.actions
 export default someSlice.reducer
