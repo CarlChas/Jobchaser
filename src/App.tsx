@@ -8,16 +8,15 @@ import HomePage from './components/HomePage'
 import { AuthProvider } from './AuthContext'
 import Navigation from './components/Navigation'
 import ProtectedRoute from './components/ProtectedRoute'
-import { useTheme } from './components/NightMode'
+// import { useTheme } from './components/NightMode'
 import ThemeToggleButton from './components/ThemeButton'
 
 const App: React.FC = () => {
-  const { theme } = useTheme()
   return (
-    <AuthProvider>
-      <div className={theme === 'light' ? 'light-theme' : 'dark-theme'}>
-        <ThemeToggleButton />
-        <h1 style={{ textAlign: 'center' }}>Welcome to Jobchaser</h1>
+    <div>
+      <ThemeToggleButton />
+      <h1 style={{ textAlign: 'center' }}>Welcome to Jobchaser</h1>
+      <AuthProvider>
         <BrowserRouter>
           <header>
             <Navigation />
@@ -31,8 +30,8 @@ const App: React.FC = () => {
             </Route>
           </Routes>
         </BrowserRouter>
-      </div>
-    </AuthProvider>
+      </AuthProvider>
+    </div>
   )
 }
 

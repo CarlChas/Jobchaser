@@ -1,5 +1,7 @@
+/* General styles for elements */
 header {
-  background-color: beige;
+  background-color: lightgray;
+  border-radius: 15px;
 }
 
 .searchBar {
@@ -30,7 +32,6 @@ header {
   min-width: 5rem;
   max-height: 1rem;
   padding: 0.7rem;
-  /* padding: 10px; */
   text-align: center;
 }
 
@@ -52,8 +53,8 @@ header {
 
 /* Define dark theme styles */
 .dark-theme {
-  background-color: black;
-  color: white;
+  --background-color: rgb(34, 33, 33);
+  --text-color: white;
   --button-background: #333;
   --button-text-color: white;
 }
@@ -63,6 +64,7 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   margin: auto;
+  height: 100%;
 }
 
 button {
@@ -71,6 +73,8 @@ button {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  position:absolute; top:0; right:0;
+  border-radius: 10px;
 }
 
 button:hover {
