@@ -17,7 +17,7 @@ const App: React.FC = () => {
     <div className={theme === 'light' ? 'light-theme' : 'dark-theme'}>
       <AuthProvider>
         <ThemeToggleButton />
-        <h1>Welcome to Jobchaser</h1>
+        <h1 style={{ textAlign: 'center' }}>Welcome to Jobchaser</h1>
         <BrowserRouter>
           <header>
             <Navigation />
