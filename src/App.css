@@ -42,6 +42,36 @@ header {
   flex: 1;
 }
 
-/* .jobSection {
-  justify-content: ;
-} */
+/* Define light theme styles */
+.light-theme {
+  --background-color: white;
+  --text-color: black;
+  --button-background: #ddd;
+  --button-text-color: black;
+}
+
+/* Define dark theme styles */
+.dark-theme {
+  --background-color: black;
+  --text-color: white;
+  --button-background: #333;
+  --button-text-color: white;
+}
+
+/* Apply the theme variables to the root element */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
