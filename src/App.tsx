@@ -14,8 +14,8 @@ import ThemeToggleButton from './components/ThemeButton'
 const App: React.FC = () => {
   const { theme } = useTheme()
   return (
-    <div className={theme === 'light' ? 'light-theme' : 'dark-theme'}>
-      <AuthProvider>
+    <AuthProvider>
+      <div className={theme === 'light' ? 'light-theme' : 'dark-theme'}>
         <ThemeToggleButton />
         <h1 style={{ textAlign: 'center' }}>Welcome to Jobchaser</h1>
         <BrowserRouter>
@@ -31,8 +31,8 @@ const App: React.FC = () => {
             </Route>
           </Routes>
         </BrowserRouter>
-      </AuthProvider>
-    </div>
+      </div>
+    </AuthProvider>
   )
 }
 
