@@ -67,7 +67,7 @@ body {
   height: 100%;
 }
 
-button {
+.buttony {
   background-color: var(--button-background);
   color: var(--button-text-color);
   border: none;
@@ -77,6 +77,6 @@ button {
   border-radius: 10px;
 }
 
-button:hover {
+.buttony:hover {
   opacity: 0.8;
 }

@@ -5,7 +5,7 @@ const ThemeToggleButton: React.FC = () => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <button onClick={toggleTheme}>
+    <button className='buttony' onClick={toggleTheme}>
       Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
     </button>
   )
